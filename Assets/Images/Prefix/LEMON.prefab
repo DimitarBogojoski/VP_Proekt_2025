@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 353381819754208020}
   - component: {fileID: 1509310851005112294}
   - component: {fileID: 6242627270113983190}
+  - component: {fileID: 7747963030807629816}
   m_Layer: 0
   m_Name: LEMON
   m_TagString: Untagged
@@ -220,7 +221,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -232,3 +233,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7747963030807629816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038511738777409375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e30f15e889caa44f9778a5fd5cd042f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

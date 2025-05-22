@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5309499675822153948}
   - component: {fileID: 236386661657836790}
   - component: {fileID: 2724807673006234306}
+  - component: {fileID: -1388061562670830164}
   m_Layer: 0
   m_Name: APPLE
   m_TagString: Untagged
@@ -240,7 +241,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -252,3 +253,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1388061562670830164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238347188548141820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e30f15e889caa44f9778a5fd5cd042f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
