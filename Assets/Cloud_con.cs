@@ -8,7 +8,10 @@ public class Cloud : MonoBehaviour
     public Transform[] fruitObj;
     static public string spawnYet = "n";
     static public Vector2 cloudxPos;
-    
+    static public Vector2 spawnPos;
+    static public string newFruit="n";
+    static public int witchFruit=0;
+
     void Start()
     {
         
@@ -18,6 +21,7 @@ public class Cloud : MonoBehaviour
     void Update()
     {
         SpawnFruit();
+        ReplaceFruit();
 
         if (Input.GetKey("a")){
             GetComponent<Rigidbody2D>().velocity = new Vector2(-2, 0);
@@ -31,15 +35,30 @@ public class Cloud : MonoBehaviour
         }
 
         cloudxPos=transform.position;
+
+        if((Input.GetKeyDown("space")) && (spawnYet == "y")) {
+            spawnYet = "n";
+        }
         
     }
+
 
     void SpawnFruit()
     {
         if(spawnYet == "n")
         {
             StartCoroutine(spawnTimer());
-            spawnYet = "y";
+            spawnYet = "w";
+        }
+    }
+
+    void ReplaceFruit()
+    {
+        if (newFruit == "y")
+        {
+            newFruit = "n";
+            //spawnYet = "n";
+            Instantiate(fruitObj[witchFruit + 1], spawnPos, fruitObj[0].rotation);
         }
     }
 
@@ -47,5 +66,6 @@ public class Cloud : MonoBehaviour
     {
         yield return new WaitForSeconds(.75f);
         Instantiate(fruitObj[Random.Range(0, 3)], transform.position, fruitObj[0].rotation);
+        spawnYet = "y";
     }
 }

@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 678501640}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 800276675}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -517,6 +517,10 @@ MonoBehaviour:
   - {fileID: 3388500658062239821, guid: b22fdabc11f562e4fafabccc22dbe6a7, type: 3}
   - {fileID: 1941198112336918081, guid: 87158699d7408f143bf764ba9e8e409c, type: 3}
   - {fileID: 5780089598374510698, guid: 4e9745cd80f6b1846a4da103320ae8c8, type: 3}
+  - {fileID: 2644393400454941993, guid: 242d490605c8ca5419e26dd4efff44eb, type: 3}
+  - {fileID: 4498166064667746756, guid: e9722f69720dde14591a6b77e128531b, type: 3}
+  - {fileID: 661032540366071694, guid: f1c52c6318a3a9e42affb94ecd013e25, type: 3}
+  - {fileID: 1352677518079839394, guid: b6fc8f6ed722dde4594401c324daeb2d, type: 3}
 --- !u!50 &1471374760
 Rigidbody2D:
   serializedVersion: 4
@@ -584,7 +588,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9538cd5df5d66dd4199527cf07fd9b31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -624,7 +628,7 @@ GameObject:
   - component: {fileID: 1644606009}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
