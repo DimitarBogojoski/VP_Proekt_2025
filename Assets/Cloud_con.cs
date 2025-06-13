@@ -6,27 +6,24 @@ using UnityEngine;
 public class Cloud : MonoBehaviour
 {
     public Transform[] fruitObj;
-    static public string spawnYet = "n";
+    static public bool spawnYet = false;
     static public Vector2 cloudxPos;
     static public Vector2 spawnPos;
-    static public string newFruit="n";
+    static public bool newFruit=false;
     static public int witchFruit=0;
 
     void Start()
     {
-        
+        SpawnFruitImmediate();
     }
 
-    
     void Update()
     {
-        SpawnFruit();
-        ReplaceFruit();
+        
 
         if (Input.GetKey("a")){
             GetComponent<Rigidbody2D>().velocity = new Vector2(-2, 0);
         }
-
         if(Input.GetKey("d")) {
             GetComponent<Rigidbody2D>().velocity = new Vector2(2,0);
         }
@@ -34,38 +31,43 @@ public class Cloud : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         }
 
-        cloudxPos=transform.position;
+        if (transform.position.x < -2.55f)
+            transform.position = new Vector2(-2.55f, transform.position.y);
+        if (transform.position.x > 1.65f)
+            transform.position = new Vector2(1.65f, transform.position.y);
 
-        if((Input.GetKeyDown("space")) && (spawnYet == "y")) {
-            spawnYet = "n";
+        cloudxPos = transform.position;
+
+        if (Input.GetKeyDown("space") && spawnYet ) {
+            spawnYet = false;
+            StartCoroutine(spawnTimer());
         }
-        
+
+        ReplaceFruit();
     }
 
-
-    void SpawnFruit()
+    void SpawnFruitImmediate()
     {
-        if(spawnYet == "n")
-        {
-            StartCoroutine(spawnTimer());
-            spawnYet = "w";
-        }
+        GameObject fruit = Instantiate(fruitObj[Random.Range(0, 3)], transform.position, fruitObj[0].rotation).gameObject;
+        fruit.GetComponent<Fruit_con>().followCloud = true;
+        spawnYet = true;
     }
 
     void ReplaceFruit()
     {
-        if (newFruit == "y")
+        if (newFruit)
         {
-            newFruit = "n";
-            //spawnYet = "n";
-            Instantiate(fruitObj[witchFruit + 1], spawnPos, fruitObj[0].rotation);
+            newFruit = false;
+            GameObject fruit = Instantiate(fruitObj[witchFruit + 1], spawnPos, fruitObj[0].rotation).gameObject;
+            fruit.GetComponent<Fruit_con>().followCloud = false;
+            fruit.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }
 
     IEnumerator spawnTimer()
     {
         yield return new WaitForSeconds(.75f);
-        Instantiate(fruitObj[Random.Range(0, 3)], transform.position, fruitObj[0].rotation);
-        spawnYet = "y";
+        SpawnFruitImmediate();
     }
+
 }
